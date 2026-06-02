@@ -428,11 +428,10 @@ function cardSmall(e){
 // ── TOC ──
 document.getElementById('tocList').innerHTML = E.map((e)=>{
   const dept={同窗好友:'同窗好友',亲情:'至亲家人',师恩:'难忘师恩'};
-  return `<div class="flex items-center gap-3 py-2 border-b border-emerald-50 hover:bg-emerald-50/30 transition-colors cursor-pointer rounded px-2" onclick="openEssay(${e.id})">
-    <div class="w-8 h-8 flex-shrink-0 rounded overflow-hidden shadow-sm"><img src="${e.img}" alt="${e.title}" class="w-full h-full object-cover"></div>
-    <span class="text-[12px] text-soft/70 font-sans font-medium w-16 flex-shrink-0">${dept[e.tags[0]]}</span>
-    <span class="font-serif text-sm text-ink flex-1 truncate">${e.title}</span>
-    <span class="text-[11px] text-soft/25 hidden md:inline font-sans">${e.author}</span></div>`;
+  return `<div class="flex items-center gap-3 py-2.5 border-b border-emerald-50 hover:bg-emerald-50/30 transition-colors cursor-pointer rounded px-2" onclick="openEssay(${e.id})">
+    <span class="text-xs text-soft/60 font-sans font-medium w-16 flex-shrink-0">${dept[e.tags[0]]}</span>
+    <span class="font-serif text-sm text-ink flex-1">${e.title}</span>
+    <span class="text-[11px] text-soft/30 hidden md:inline font-sans">${e.author}</span></div>`;
 }).join('');
 
 // ── COVER STORY ──

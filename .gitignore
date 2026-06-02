@@ -1,1 +1,8 @@
+*.docx
+*.epub
+*.pdf
+*参考*.png
+卷首语.md
+生图提示词*.md
+_extracted_data.json
 .DS_Store

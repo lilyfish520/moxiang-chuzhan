@@ -465,7 +465,7 @@ document.getElementById('coverStory').innerHTML = `<div class="max-w-5xl mx-auto
 <div class="cursor-pointer" onclick="openEssay(1)"><img src="${cover.img}" alt="${cover.title}" class="w-full h-full object-cover" loading="lazy"></div></div></div>`;
 
 // ═══════════ SECTIONS ═══════════
-const tea = E.filter(e=>e.tags[0]==='师恩');
+const tea = E.filter(e=>e.tags[0]==='师恩' && e.id!==1);
 const fam = E.filter(e=>e.tags[0]==='父母');
 const peer = E.filter(e=>e.tags[0]==='朋友');
 const comm = E.filter(e=>e.tags[0]==='社区');

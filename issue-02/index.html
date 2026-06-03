@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>墨香初绽 · 总想说声谢谢你</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{serif:['"Noto Serif SC"','"PingFang SC"','"Microsoft YaHei"','serif'],sans:['"PingFang SC"','"Microsoft YaHei"','sans-serif']},colors:{ink:'#2d2420',soft:'#6b5e55',cream:'#fefaf3',lavender:'#a78bfa',violet:{50:'#f5f3ff',100:'#ede9fe',200:'#ddd6fe',300:'#c4b5fd',400:'#a78bfa',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},plum:'#5b21b6',mauve:'#c4b5d4',lilac:'#e9e0f5'}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+.magazine-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}@media(max-width:768px){.magazine-grid{grid-template-columns:1fr}}
+.hover-lift{transition:all .3s cubic-bezier(.4,0,.2,1)}.hover-lift:hover{transform:translateY(-4px);box-shadow:0 20px 50px -12px rgba(0,0,0,.15)}
+.big-num{font-family:'Noto Sans SC',sans-serif;font-weight:900;line-height:.8}
+.section-tag{font-family:'Noto Sans SC',sans-serif;font-weight:700;letter-spacing:.15em}
+.article-body p{text-indent:2em;margin-bottom:.8em;line-height:2.1}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f8f6f1}::-webkit-scrollbar-thumb{background:#d4c8d8;border-radius:3px}
+</style>
+</head>
+<body class="bg-[#f8f6f1] text-ink font-sans antialiased">
+
+<!-- ═══════════ COVER ═══════════ -->
+<header class="relative min-h-screen flex items-center overflow-hidden bg-white">
+  <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-violet-400 via-purple-400 to-fuchsia-400"></div>
+
+  <!-- Background flowing ribbons - left -->
+  <div class="absolute left-0 top-20 opacity-15" style="width:320px;height:520px;">
+    <svg viewBox="0 0 320 520" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60,0 Q120,130 40,260 Q-20,390 80,520" fill="none" stroke="#a78bfa" stroke-width="2"/>
+      <path d="M100,0 Q160,150 80,280 Q20,410 120,520" fill="none" stroke="#c4b5d4" stroke-width="1.5"/>
+      <ellipse cx="70" cy="200" rx="50" ry="120" fill="#c4b5d4" transform="rotate(-20,70,200)"/>
+      <ellipse cx="50" cy="350" rx="40" ry="90" fill="#a78bfa" opacity="0.6" transform="rotate(-10,50,350)"/>
+    </svg>
+  </div>
+
+  <!-- Background flowing ribbons - right -->
+  <div class="absolute right-0 bottom-10 opacity-12" style="width:360px;height:480px;">
+    <svg viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg">
+      <path d="M300,0 Q240,120 300,240 Q360,360 240,480" fill="none" stroke="#c4b5d4" stroke-width="2"/>
+      <ellipse cx="240" cy="220" rx="60" ry="140" fill="#a78bfa" opacity="0.5" transform="rotate(15,240,220)"/>
+      <ellipse cx="270" cy="380" rx="45" ry="100" fill="#c4b5d4" transform="rotate(25,270,380)"/>
+    </svg>
+  </div>
+
+  <!-- Small accent dots -->
+  <div class="absolute opacity-10" style="top:18%;left:50%;width:60px;height:60px;">
+    <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="8" fill="#a78bfa"/></svg>
+  </div>
+  <div class="absolute opacity-8" style="top:55%;left:22%;width:40px;height:40px;">
+    <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="5" fill="#c4b5d4"/></svg>
+  </div>
+  <div class="absolute opacity-10" style="top:35%;right:28%;width:50px;height:50px;">
+    <svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="6" fill="#a78bfa"/></svg>
+  </div>
+
+  <!-- Main content -->
+  <div class="relative z-10 w-full max-w-3xl mx-auto px-6 md:px-12 py-20 text-center">
+    <div class="inline-block px-5 py-1.5 bg-violet-50 text-violet-700 text-xs font-bold tracking-[.2em] rounded-full mb-10 section-tag border border-violet-200">2026 · VOL.2</div>
+
+    <h1 class="font-serif text-6xl md:text-8xl font-black text-ink tracking-[.15em] leading-[1.2] mb-6">
+      墨香<br><span class="text-violet-600">初绽</span>
+    </h1>
+
+    <div class="flex items-center justify-center gap-3 mb-6">
+      <span class="h-px w-16 bg-gradient-to-r from-transparent to-violet-300"></span>
+      <span class="text-violet-300 text-sm">◆</span>
+      <span class="h-px w-16 bg-gradient-to-l from-transparent to-violet-300"></span>
+    </div>
+
+    <p class="text-ink/35 text-lg md:text-xl tracking-[.3em] font-serif mb-2">第二期《总想说声谢谢你》</p>
+    <p class="text-ink/20 text-sm tracking-[.2em] font-serif">九篇佳作 · 四个栏目 · 感恩笔墨</p>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-violet-300/40 text-sm">↓ 翻阅</div>
+  <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-violet-400/30 via-purple-400/30 to-fuchsia-400/30"></div>
+</header>
+
+<!-- ═══════════ TOC ═══════════ -->
+<section class="relative py-16 md:py-20 bg-white overflow-hidden">
+  <!-- Decorative corner top-right -->
+  <div class="absolute top-0 right-0 opacity-8" style="width:180px;height:180px;">
+    <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="150" cy="30" r="60" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
+      <circle cx="150" cy="30" r="40" fill="none" stroke="#c4b5d4" stroke-width="1"/>
+      <circle cx="150" cy="30" r="20" fill="#e9e0f5"/>
+    </svg>
+  </div>
+  <!-- Decorative corner bottom-left -->
+  <div class="absolute bottom-0 left-0 opacity-6" style="width:160px;height:160px;">
+    <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,160 Q40,100 80,140 Q120,180 160,120" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
+      <path d="M0,140 Q50,80 100,120 Q140,160 160,90" fill="none" stroke="#c4b5d4" stroke-width="1"/>
+    </svg>
+  </div>
+  <!-- Side decorative line -->
+  <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-violet-200 to-transparent opacity-40"></div>
+  <div class="relative z-10 max-w-2xl mx-auto px-6">
+    <div class="flex items-center gap-3 mb-10">
+      <span class="w-10 h-px bg-violet-400"></span>
+      <span class="text-xs text-soft/50 tracking-[.3em] font-sans font-bold">CONTENTS</span>
+      <span class="text-[10px] text-soft/30">目 录</span>
+      <span class="flex-1 h-px bg-gradient-to-r from-violet-200 to-transparent ml-2"></span>
+    </div>
+    <div class="font-serif" id="tocList"></div>
+  </div>
+</section>
+
+<!-- ═══════════ EDITOR'S NOTE ═══════════ -->
+<section class="relative py-16 md:py-20 bg-gradient-to-b from-white via-lilac/20 to-lilac/40 overflow-hidden">
+  <!-- Top-left floating circles -->
+  <div class="absolute top-8 left-12 opacity-10" style="width:100px;height:100px;">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="30" r="25" fill="none" stroke="#a78bfa" stroke-width="2"/>
+      <circle cx="70" cy="50" r="15" fill="#c4b5d4" opacity="0.5"/>
+      <circle cx="40" cy="70" r="8" fill="#a78bfa" opacity="0.3"/>
+    </svg>
+  </div>
+  <!-- Bottom-right ribbon -->
+  <div class="absolute bottom-0 right-0 opacity-8" style="width:200px;height:200px;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path d="M200,200 Q150,120 100,160 Q50,200 0,140" fill="none" stroke="#a78bfa" stroke-width="2"/>
+      <path d="M200,170 Q160,100 120,130 Q80,160 20,120" fill="none" stroke="#c4b5d4" stroke-width="1.5"/>
+      <ellipse cx="160" cy="80" rx="30" ry="50" fill="#e9e0f5" transform="rotate(-20,160,80)"/>
+    </svg>
+  </div>
+  <!-- Small scattered dots -->
+  <div class="absolute opacity-6" style="top:30%;right:15%;width:30px;height:30px;">
+    <svg viewBox="0 0 30 30"><circle cx="15" cy="15" r="4" fill="#a78bfa"/></svg>
+  </div>
+  <div class="absolute opacity-5" style="top:70%;left:8%;width:20px;height:20px;">
+    <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="3" fill="#c4b5d4"/></svg>
+  </div>
+  <div class="relative z-10 max-w-2xl mx-auto px-6">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-10 h-px bg-violet-400"></span>
+      <span class="text-xs text-soft/50 tracking-[.3em] font-sans font-bold">EDITOR’S NOTE</span>
+      <span class="text-[10px] text-soft/30">卷 首 语</span>
+      <span class="flex-1 h-px bg-gradient-to-r from-violet-200 to-transparent ml-2"></span>
+    </div>
+    <div class="flex gap-4 mb-6">
+      <div class="w-1.5 bg-gradient-to-b from-violet-400 via-purple-400 to-fuchsia-300 rounded-full flex-shrink-0"></div>
+      <div>
+        <h2 class="font-serif text-2xl md:text-3xl font-bold text-ink mb-6">当感激遇见表达</h2>
+        <div class="article-body text-[15px] text-soft font-serif">
+          <p>如果说第一期《写出人物精神》是少年们向外观察世界的目光，那么第二期《总想说声谢谢你》，便是他们向内叩问心灵的旅程。</p>
+          <p>九篇文章，九声“谢谢”——有的送给深夜背自己去医院的父亲，有的送给走廊上温柔鼓励的数学老师，有的送给那个在草稿纸上一步步讲题的前桌女孩。感谢的对象不同，情感却同样真纯。这些“谢谢”之所以迟迟未能说出口，恰恰因为它们太重要了，重要到需要鼓起全部勇气。</p>
+          <p>读这些文章时，我常常想起一句话：真正的感恩，不是礼貌的客套，而是心里被温暖之后，最自然不过的回响。这些少年笔下的感谢，有深夜的一杯热牛奶，有清晨厨房里父亲手背上烫出的水泡，有琴房里老师轻轻擦拭眼泪的手指。它们细小、具体、无声，却比任何豪言壮语都更有力量。</p>
+          <p>愿你翻开这一期时，也能想起那些值得你说声“谢谢”的人。或许读完某一篇之后，你会放下杂志，拿起手机，把埋在心底的那句话，轻轻说出来。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ COVER STORY ═══════════ -->
+<section id="coverStory" class="py-16 md:py-24 px-6 bg-white"></section>
+
+<!-- ═══════════ SECTION: 师恩难忘 ═══════════ -->
+<section class="py-12 md:py-16 px-4 md:px-8 bg-gradient-to-b from-lilac/20 to-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center gap-3 mb-8">
+      <div class="w-10 h-px bg-violet-400"></div>
+      <span class="text-violet-700 text-xs font-bold tracking-[.3em] section-tag">师恩难忘</span>
+      <span class="text-[10px] text-soft/30 font-sans">师者如光 · 微以致远</span>
+      <div class="flex-1 h-px bg-gradient-to-r from-violet-200 to-transparent ml-3"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="sectionTea"></div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION: 父母情深 ═══════════ -->
+<section class="py-12 md:py-16 px-4 md:px-8 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center gap-3 mb-8">
+      <div class="w-10 h-px bg-violet-400"></div>
+      <span class="text-violet-700 text-xs font-bold tracking-[.3em] section-tag">父母情深</span>
+      <span class="text-[10px] text-soft/30 font-sans">大爱无声 · 岁月有痕</span>
+      <div class="flex-1 h-px bg-gradient-to-r from-violet-200 to-transparent ml-3"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="sectionFam"></div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION: 身边有你 ═══════════ -->
+<section class="py-12 md:py-16 px-4 md:px-8 bg-gradient-to-b from-lilac/20 to-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center gap-3 mb-8">
+      <div class="w-10 h-px bg-violet-400"></div>
+      <span class="text-violet-700 text-xs font-bold tracking-[.3em] section-tag">身边有你</span>
+      <span class="text-[10px] text-soft/30 font-sans">同伴如镜 · 照见成长</span>
+      <div class="flex-1 h-px bg-gradient-to-r from-violet-200 to-transparent ml-3"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="sectionPeer"></div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION: 社区温暖 ═══════════ -->
+<section class="py-12 md:py-16 px-4 md:px-8 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center gap-3 mb-8">
+      <div class="w-10 h-px bg-violet-400"></div>
+      <span class="text-violet-700 text-xs font-bold tracking-[.3em] section-tag">社区温暖</span>
+      <span class="text-[10px] text-soft/30 font-sans">微光成炬 · 邻里如春</span>
+      <div class="flex-1 h-px bg-gradient-to-r from-violet-200 to-transparent ml-3"></div>
+    </div>
+    <div class="grid grid-cols-1 gap-5" id="sectionComm"></div>
+  </div>
+</section>
+
+<!-- ═══════════ BACK COVER ═══════════ -->
+<footer class="py-16 md:py-20 bg-plum text-cream/80">
+  <div class="max-w-2xl mx-auto px-6 text-center">
+    <h3 class="font-serif text-3xl font-black text-cream mb-4">墨香初绽</h3>
+    <p class="text-sm text-cream/40 tracking-[.2em] mb-6">2026 · VOL.2 · 总想说声谢谢你</p>
+    <div class="flex items-center justify-center gap-3 mb-6">
+      <span class="h-px w-12 bg-cream/20"></span>
+      <span class="text-cream/30 text-xs">◆</span>
+      <span class="h-px w-12 bg-cream/20"></span>
+    </div>
+    <p class="text-xs text-cream/25 leading-relaxed">九篇佳作 · 少年笔墨<br>每一句“谢谢”都是一颗发光的种子</p>
+  </div>
+</footer>
+
+<!-- ═══════════ MODAL ═══════════ -->
+<div id="modal" class="fixed inset-0 bg-ink/70 z-50 backdrop-blur-sm flex items-start justify-center overflow-y-auto py-10" style="display:none;">
+  <div class="bg-white w-full max-w-3xl mx-4 my-auto shadow-2xl" id="modalContent"></div>
+</div>
+
+<script>
+// ═══════════ DATA ═══════════
+const E = [
+{
+  "id": 1,
+  "title": "总想说声谢谢您",
+  "author": "江昕承",
+  "img": "images/01.jpg",
+  "tags": [
+    "师恩"
+  ],
+  "dept": "师恩难忘",
+  "quote": "原来“谢谢你”从来不是一句客套，而是内心被温暖后，最真挚的表达。",
+  "content": [
+    "我这个人向来自信骄傲，总觉得数学不过如此。可就是那一次数学周测的失利，让我总想对数学老师说声：“谢谢您。”",
+    "考前，我和小张小吴打赌，笃定自己能考高分，这时的我满心都是傲气。考试时，前面的选择与填空题写的格外顺手，这更让我飘了起来，可越到后面，复杂的公式、难解的题目就如潮水般涌来，那些熟悉的知识点在我脑中乱作一团。我越写越急，越急越慌，答案改了又改，最后收卷时，我也只能潦草了之。",
+    "发卷那天，那刺眼的两位数分数就像一把火，烧得我脸颊火辣辣的。整节课我都坐得笔直，再也没了往日的散漫，目光炯炯把每一道错题都记进了心里。",
+    "下课铃响，果然老师就把我叫了出去，我捏着卷子，已经做好了挨批评的准备。可走出教室，迎接我的不是老师的责骂，而是老师温柔的眼神。她轻轻拍着我的肩，语气十分温和：“小江，老师知道你这次是失误了，不过老师还是希望你戒骄戒躁，沉下心来好好学习，老师相信你会成功的。”",
+    "老师的话如同一阵暖流，慢慢冲散了我的懊恼。原来我只顾着骄傲，却忘了踏实才是根本，是老师没有指责我的浮躁，而是用温柔的鼓励点醒了我。",
+    "从那以后，我真的变了。课堂上，不再东张西望，而是挺直腰板，紧紧跟随老师思路。课后我也会主动请教同学，每当我遇到难题想放弃时，我都会想起那句“沉下心来，相信我一定可以！”",
+    "我的努力慢慢有了回报，数学成绩开始回升，再次面对小张时，我也不再着急证明自己，而是用有力的成绩赢得认可。每当我看到慢慢回升的成绩时，我总想对你说声谢谢您！你就像一盏路灯，给身处黑暗的我照亮前路。",
+    "原来“谢谢你”从来不是一句客套，而是内心被温暖后，最真挚地表达。老师，你像一团火，给身处寒冬的我送来温暖。谢谢您，老师，是您在我最迷茫，最需要指引的时候，指引了我。是您让我知道了，成长不仅是分数的提升，更是心性的变化！老师，谢谢您！"
+  ]
+},
+{
+  "id": 2,
+  "title": "总想说声谢谢你",
+  "author": "吴柏霖",
+  "img": "images/02.jpg",
+  "tags": [
+    "父母"
+  ],
+  "dept": "父母情深",
+  "quote": "每一口早餐都裹着满满的父爱，虽未用言语表达，却在日常中静静流淌。",
+  "content": [
+    "时光飞逝，如白驹过隙。一转眼，您从一位帅哥变成了一个大叔。父亲您用十三年时光伴我长大，您是我人生路上倾囊相授的老师，我总想说一声谢谢你。",
+    "您不似在学校里的老师那样教授我知识，但你却格外关心我的情绪。我开心时你的笑容比我还灿烂；我伤心时，您的安慰让我如沐春风；我紧张时，您幽默的笑语总能让我破涕为笑；我害怕时，您耐心的开导我，让我总能获得勇气。",
+    "不仅如此，你的爱更体现在日常生活之中。每天天还没亮，天色沉沉的，可我却总能隐隐听到你一骨碌起床，蹑手蹑脚地打开房门把我踢开的被子又盖回我的身上，接着出去给我做早餐。你的手艺很好，一份小小的三明治在你的手中却变得十分美味。你还说早餐一定要有营养，但又不能太重复，所以隔三差五就学一些新的好吃的早餐给我吃。",
+    "时不时你的手就会被烫出一个一个水泡，那时你就会把手背到身后，被我看到了也只说，没事，一点感觉都没有，可暗地里却被痛得倒吸冷气。我也想跟你说不用这么用心的，可你总会板着一张脸严肃的说我正在长身体的时候，早餐就要吃好一点，以后才能快点长高。",
+    "所以每一次我在吃早餐时都能感到每一口都裹着你满满的父爱。这份父爱虽没有用言语表达出来，可却在日常的生活中流露了出来。您仿佛一道最为坚实的屏障，让我安心，又仿佛世上最暖的被窝，把我裹在里面。",
+    "父亲，您对我的无私奉献之爱时时刻刻的感动着我，但我却很少有机会向您表达我的感激之情。今天，我想真诚的对您说：“父亲，谢谢你陪我一路成长，希望你能一直陪着我，陪同我一起看到世界上最美丽的风景。”以后，我也想为您做些力所能及的事，回报您的爱。"
+  ]
+},
+{
+  "id": 3,
+  "title": "总想说声谢谢你",
+  "author": "钟文",
+  "img": "images/03.jpg",
+  "tags": [
+    "父母"
+  ],
+  "dept": "父母情深",
+  "quote": "趴在他宽厚的背上，我才第一次发现，原来这个总是对我板着脸的人，是最怕我倒下的人。",
+  "content": [
+    "在我成长的路上，有很多人值得感谢。有人想谢谢温柔的妈妈，有人想谢谢慈祥的爷爷，而我最想感谢的，是那个不善言辞却一直守护我的爸爸。",
+    "爸爸是一个篮球爱好者，常年的运动让他有着结实的肌肉和线条分明的腹肌。他的动作很快，像一只灵活的猴子，眼神也格外锐利。以前我总觉得他的眼神像带着锋芒，每次我训练想偷懒、脚步慢下来时，他皱着眉用那双眼睛盯着我，我心里就咯噔一下，像被什么东西扎了一下，赶紧硬着头皮往前冲。他拍拍我的肩说：“男子汉，不能因为一点累就放弃。”那时我嘴上不敢反驳，心里却满是委屈和不服气，偷偷抱怨他太不近人情，甚至在心里跟他闹起了小别扭。他对我的体育训练格外严格，哪怕我跑得气喘吁吁、双腿像灌了铅一样沉重，他也从不心软。直到后来我才慢慢懂，他的每一次严厉，都是想让我拥有健康的身体，更想让我学会坚持，学会不轻易放弃。",
+    "去年冬天的一个深夜，我突然发起高烧，浑身滚烫，连站都站不稳。迷迷糊糊中，我感觉自己像飘在云里，耳边只有心跳声，连呼吸都带着灼人的热度。爸爸发现后，二话不说背起我就往医院跑，那一刻，趴在他宽厚的背上，我才第一次发现，原来这个总是对我板着脸的男人，背是这么温暖、这么让人安心。路上寒风刺骨，他却跑得满头大汗，后背的衣服都被汗水浸透了。到了医院，他忙着挂号、缴费，又陪着我输液，忙前忙后，一刻也没停过。我迷迷糊糊地躺在病床上，看到他坐在床边，眼神里满是疲惫，却还是握着我的手，轻声说：“别怕，有爸爸在。”那一刻，我突然明白，他的严厉背后，藏着最深的温柔。",
+    "从那以后，我心里一直藏着一句话，却总也说不出口。每次看到他为我操劳的身影，每次想起他深夜陪我输液的样子，我都想对他说一声“谢谢”。可话到嘴边，又总是被我咽了回去。我总觉得，爸爸会懂我的心意，却忘了，他也需要我的回应。",
+    "父爱藏在岁月里，无声却有力量。爸爸，这些年，谢谢你的严厉，谢谢你的守护，也谢谢你藏在锋芒里的温柔。我总想说声谢谢你，今天，我终于把这句话说出口：“爸爸，谢谢你。”"
+  ]
+},
+{
+  "id": 4,
+  "title": "总想说声谢谢你",
+  "author": "李睿欣",
+  "img": "images/04.jpg",
+  "tags": [
+    "朋友"
+  ],
+  "dept": "身边有你",
+  "quote": "那句迟到的谢谢，你听不见也无妨——它已经长成了我思想里的一把钥匙。",
+  "content": [
+    "“谢谢”两个字，说起来轻巧，可有时候，它像一颗糖卡在喉咙里，甜得发苦，却怎么也咽不下去。那个周末的午后，我就被这样一份感激堵住了嘴。那个人，是我的姐姐。",
+    "那天下午，我被一道几何证明题困住了。辅助线画了又擦，擦了又画，草稿纸堆了一桌。阳光从书桌一角慢慢西移，我的耐心也跟着一点点消失。就在我快要放弃时，姐姐推门进来，在地毯上坐下，手里拿着一个鲁班锁。",
+    "我瞥了一眼，以为她是来打发时间的，便继续跟题较劲。",
+    "又过了十几分钟，我还是毫无头绪。烦躁中，我抬起头，目光落在了姐姐的手上。她正专注地摆弄那个鲁班锁——六根木条咬合在一起。她想拆开一根，卡住了。她轻轻推了推，没动；又换了方向拉，还是纹丝不动。她没有着急，而是把鲁班锁翻了个面，仔细看卡住的位置。然后她试着推旁边的一根木条——那根松动了一点。她顺着这个空隙，再回头推原来那根……缓缓地，木条滑出了一小截。",
+    "我的笔不知不觉停了下来。她继续拆，每次遇到卡住的地方，她从不硬推，而是停下来，换个方向，甚至把之前的木条装回去重来。全过程不急不躁。",
+    "我忽然心里一动。再看那道几何题——我是不是也一直在一个方向上硬画？我试着把图形转了个角度，延长了另一条边。笔尖落下去，思路居然通了一半。我继续往下推，越来越顺。等我写完证明过程，再抬头时，姐姐已经把鲁班锁完整拆开，又一榫一卯地拼了回去。",
+    "她看了我一眼，什么也没说，淡淡笑了一下，收起鲁班锁就出去了。",
+    "我张了张嘴，想说一声“谢谢”。可那两个字就那样卡在嘴边。为什么说不出来？不是因为不想说，而是那一刻，我心里忽然觉得——如果只说一句“谢谢”，实在太轻了。她为了帮我，想了这么安静又用心的方法，我要是轻飘飘地丢下一句“谢谢”，好像反而辜负了她。再说了，她根本没有等着我谢她的意思，她站起来就走了，连开口的机会都没给我。我就那样愣在原地，喉咙动了几下，终究没有发出声音。",
+    "后来我才慢慢悟明白：她不是来打发时间的。她是看见我被难题困住，特意带鲁班锁来的。她知道直接教我，我会更烦躁，所以用这种方式让我自己看——卡住了，换个方向；推不动，退一步重来。她从不讲大道理，却在我最需要的时候，用最温柔的方式拉了我一把。",
+    "那句“谢谢”我始终没有说出口。但那个下午，那个鲁班锁，她一次次转动的指尖，还有最后那淡淡一笑，我都收进了心里。它们比一句“谢谢”重得多。因为真正的感谢，不是挂在嘴边的话，而是当你以后再遇到解不开的“锁”时，会忽然想起——有一个人，曾用沉默教会了你转弯。",
+    "姐姐，谢谢你。这句迟到的谢谢，你听不见也无妨——它已经长成了我思想里的一把钥匙。"
+  ]
+},
+{
+  "id": 5,
+  "title": "总想说声谢谢你",
+  "author": "罗颖萱",
+  "img": "images/05.jpg",
+  "tags": [
+    "师恩"
+  ],
+  "dept": "师恩难忘",
+  "quote": "那句没能当面说出口的“谢谢你”，早已化作我前行路上的光。",
+  "content": [
+    "“谢谢您”，这句话在我心中翻涌了无数个日夜，却最终没能当着您的面说出口——我的英语老师李老师。",
+    "五年级时，英语是我的软肋，成绩中游，我不敢在课堂抬头，更怕朗读被嘲笑，只能缩在角落沉默。",
+    "直到那次英语朗读展示。",
+    "听说要全班上台，我攥紧衣角，满心都是逃避，害怕得声音发颤。那时您轻轻走到我身边，没有丝毫责怪，只是温柔地拍拍我的肩，轻声说：“来办公室吧，我教你。”",
+    "到了办公室门口，午后的阳光透过窗户斜斜照下，柔软的光晕落在您身上，像是披了一层金纱。不知为何，我紧绷的神经放松了。您拿着红笔，细细地把重音和停顿一一标注出来，一句一句带着我读。有些单词我格外生疏，读得磕磕绊绊，您却未曾皱一下眉，只是放慢语速，耐心让我跟着口型学，轻声安慰：“没关系，你肯定可以的。”每当我有一点小小的进步，您也从不吝啬对我的称赞，而我也在一次次温暖的鼓励中读得越来越好。终于顺畅地读完整篇文章后，您笑着拍拍我的肩，笃定地说：“上台就这么读，你肯定行。”看着画得密密麻麻的英语书，我忽然觉得，英语不再是一串冰冷的字母，而是带着温度，可以被抓住的希望。",
+    "朗读展示那天，一切十分顺利。我敛去内心的紧张，一口气顺畅地读完了这篇文章。掌声响起时，我望向教室后方，正好撞上您温柔又欣慰的目光。我清楚地知道，我丢失的自信，被您找到了。",
+    "从那以后，我的英语成绩突飞猛进，课堂上也开始主动发言。您总在我进步时肯定我，失落时鼓励我，用温柔推着我成长。",
+    "您对我的影响，也早已超越学习本身。曾经的我自卑怯懦，躲在阴影中不敢发声；如今的我勇敢自信，敢于表现。是您用耐心与善意，打碎了我裹在身上的自卑外壳，让我明白出错不可怕，不敢尝试才是遗憾。这份改变，陪我走过往后的每一天，成为我人生路上最珍贵的底气。",
+    "后来，您递交了辞呈，告别了讲台，而我攒了一肚子的感谢，终是没有说出口。",
+    "这份感谢，我藏了太久。谢谢您在我迷茫时给予我陪伴，谢谢您在我不起眼的时候为我点亮一束光。那句没能当面说出口的“谢谢你”，早已化作我前行路上的光，让我带着这份温暖与勇气，走向远方，走向更好的未来。"
+  ]
+},
+{
+  "id": 6,
+  "title": "总想说声谢谢你",
+  "author": "张文萱",
+  "img": "images/06.jpg",
+  "tags": [
+    "父母"
+  ],
+  "dept": "父母情深",
+  "quote": "愿这句谢谢陪伴我们日后的每一天，愿这句谢谢能温柔接住你那轻柔的爱。",
+  "content": [
+    "生活中，总有些人默默温暖着我们，也许是你的朋友家人，又或许是一个陌生人。而这句“谢谢”也藏在我心里很久了。今天，我只想说：“妈妈，谢谢你。”",
+    "妈妈的温暖是无声的，好似那春雨一般润物细无声。可就是这份不起眼的温暖，却贯穿了我生活中的点点滴滴。",
+    "无数个天刚蒙蒙亮的清晨，当窗外还飘着淡淡的薄雾，我还缩在被窝里，厨房的灯便亮了起来。锅铲轻轻碰撞的轻响，米粥冒泡的声音，汇成了清晨最温柔的旋律。你总是踮着脚走路，生怕惊扰了我的梦。温热的豆浆，酥脆的吐司，或是一碗冒着热气的面条，温度都如同你的爱，不多不少，却恰到好处。可我却总是揉着惺忪的睡眼匆匆扒拉几口，背上书包就出门了，从未回头看一眼你伫立在厨房门口的身影，更不曾对这份爱意说出一声“谢谢”。",
+    "还有那些挑灯夜读的夜晚，你总是轻轻推开房门，将一杯热牛奶端给我，脚步轻得像一片羽毛。牛奶的香气飘过鼻尖，你伸手帮我理了理凌乱的书页，指尖带着温度没有一句催促，只是静静地看着我，便轻轻带上门。你就这样，在我看不见的地方默默陪伴我。但或许是我总被学业的烦躁牵绊，即使张了张口也没说出那句“谢谢”。",
+    "我总把你的付出当成理所应当，好似这是你的本职工作。在我生病时守在床前照顾我，在我为考差的成绩伤心时，你总会轻声安慰我，在我摔倒受伤时，你总会将我扶起，用药轻轻擦拭伤口……你从不说自己的辛苦，也不求回报，只是用瘦弱的肩膀，为我挡住生活中的风风雨雨，把包容和偏爱都给了我。可我太粗心了，没发现你眼角的细纹，错过了太多瞬间，没说出那份感谢，让这句“谢谢”迟到了一年又一年。",
+    "但今天，我要说出，“妈妈，谢谢你！”愿这句谢谢陪伴我们日后的每一天，愿这句谢谢能温柔接住你那轻柔的爱。以后，这句“谢谢”再也不会缺席。"
+  ]
+},
+{
+  "id": 7,
+  "title": "总想说声谢谢你",
+  "author": "胡若溪",
+  "img": "images/07.jpg",
+  "tags": [
+    "社区"
+  ],
+  "dept": "社区温暖",
+  "quote": "她在使这个社区变和谐，她使大家在生活中体会到了便利与快乐。",
+  "content": [
+    "我从前每天早上的上学路上都能闻\"到阵阵臭味，看着那堆满的垃圾和到处飞的苍蝇，我特别希望能看到垃圾分类好的垃圾站，但又无能为力，而这个想法却在最近实现了。",
+    "两个月前，我在路过垃圾站的时候，看到一个女大学生模样的人弯着腰收拾垃圾，她的长发利落地扎在身后，衣着干净，眼睛大大的，看起来赏心悦目，我很想去了解情况，但因为急着上学，就只好走了。",
+    "放学后，我再经过那里，发现小山一样的垃圾已经全部整理干净，而那个姐姐在一旁贴着垃圾分类的告示，我急忙上前：“姐姐，是你把今天的垃圾收走了吗?”那姐姐冲我笑笑，说：“不是不是，我认识一些捡垃圾的爷爷奶奶们，我把纸箱和瓶子分类出来给了爷爷奶奶们，其它的丢掉了。”“太好了，我终于不用每天都闻到垃圾的臭味了。”姐姐又冲我笑笑，继续贴告示了，那之后小区的垃圾都被及时清理掉了，但我也很久没看到那个姐姐了。",
+    "后来学校组织去养老院照顾老人，到了养老院后，我们为老人们切水果，讲解现代科技产品，在讲解的时候我余光看见一个人很像那个姐姐，等讲解完，我往那边看去，真是那个姐姐，她手里拿着果盘，坐在老人们旁边和他们聊天，大家笑得都很开心，我凑近去听，听到他们在聊自己小时候的往事。养老院有角落特别漂亮，姐姐就给奶奶们扎好看的头发，凹造型，给爷爷们衬衣服，然后一个一个给爷爷奶奶们拍照，老人们笑得像孩子一样，他们就像一家人一样，其乐融融。",
+    "虽然我一直没有向那个姐姐道谢，但她的努力与善良也被很多人看在眼里，她在使这个社区变和谐，她使大家在生活中体会到了便利与快乐，谢谢你，热爱社区的姐姐。"
+  ]
+},
+{
+  "id": 8,
+  "title": "总想说声谢谢你",
+  "author": "申睿萱",
+  "img": "images/08.jpg",
+  "tags": [
+    "朋友"
+  ],
+  "dept": "身边有你",
+  "quote": "是你让我知道，真正的友谊，从来不会因为我走得慢就松开我的手。",
+  "content": [
+    "有人说，朋友是人生路上的光，在我的小学时光里，就有这样一个人，让我总把那句“谢谢你”藏在心底，从未说出口——不是不想说，而是因为太在意，反而羞于开口。",
+    "刚接触数学时，我总觉得它像座翻不过的山，那些复杂的公式，绕弯的应用题，让我屡屡受挫。班里的同学聊起数学题时的游刃有余，更让我自卑的不敢开口请教，总怕自己的笨拙被嘲笑。可在我最迷茫的时候，她出现了。她是我的前桌，一双总是弯着的眼睛像藏着星光。起初我有些忐忑，怕自己的笨拙打扰她。她看出我的顾虑，主动凑过来，轻轻点了点我的练习册：“来，我教你。”她的声音轻轻的像春日的风，吹散了我的局促。她从不会居高临下地讲解，而是拿出草稿纸，一步一步的画图，声音温柔而清晰。在她耐心的引导下，我慢慢学会了拆解难题，主动思考。是她，让我走出了畏难，学会直面挑战。",
+    "那段时间，我的眼睛度数长得很快，又偏偏坐在最后一排，经常因为看不清笔记而急得直冒汗。她察觉到我的窘迫，于是告诉我笔记的内容，有时甚至会直接把课堂上的笔记借给我。在那段眼前一片混沌的时光里，她就像我的眼睛，替我看清努力的方向。",
+    "她不仅耐心，还会把温暖分给身边的每一个人。有一次组队画手抄报时，我看着同学们三五成群的讨论，独自站在角落的我像被隔绝在孤岛，心里又酸又涩，总觉得自己格格不入。这时她走过来说：“我们组队吧！”那一刻，我心里一暖，她好像一束光，照亮了我心中的黑暗。",
+    "我总以为，心意到了就好，不必说出口。可越在意，越怕直白的感谢，会显得生分；越珍惜，越觉得任何语言都配不上她的温柔。所以，直到现在，那句迟到的“谢谢你”仍未说出口。",
+    "我曾以为，成长是一个人的孤军奋战。直到遇见她，我才明白，总有人愿意为我停下脚步，愿意把温柔分给笨拙的我。谢谢你伴我学习，谢谢你替我照亮眼前的模糊，谢谢你在我孤单时主动和我组队。是你让我知道真正的友谊，从来不是轰轰烈烈，而是细水长流。此生遇见，何其有幸，这份友谊我会珍藏一生。愿岁岁常相见，年年皆平安。"
+  ]
+},
+{
+  "id": 9,
+  "title": "总想说声谢谢你",
+  "author": "梁梓言",
+  "img": "images/09.jpg",
+  "tags": [
+    "师恩"
+  ],
+  "dept": "师恩难忘",
+  "quote": "世间最真切的关爱，往往藏在苛刻的要求里，藏在不善言说的温柔陪伴里。",
+  "content": [
+    "指尖轻触黑白琴键,清脆的音符在空中流淌。可很长的一段时间里，钢琴和我，都交杂着紧张与胆怯。我的钢琴老师格外严苛：错一个音符、乱一拍节奏、姿势稍有不恰，她都会立马指出，一遍遍打磨纠正。那时的我总认为，老师冰冷严厉的神情里，全是不近人情的冷漠。",
+    "直到那次比赛，我忐忑地走下舞台。可指尖落在琴键上，往日烂熟于心的旋律，却变得磕磕绊绊、断断续续。下台后，满心委屈与不安涌上心头，我低着头躲进琴房，眼眶一热，忍不住红了眼眶。",
+    "我害怕极了，以为等待我的又是严厉的训斥。可老师走进琴房，只是安静地看着我，久久没有说话。我紧紧攥着衣角，不敢抬头对视。再睁眼时，没有责备,没有批评，老师轻轻坐在我身旁，温柔为我擦拭眼角的委屈与害怕。",
+    "“没关系，一次失误不算什么。” 她轻声安慰我，笑着告诉我,“我看了你的演奏视频，你的律动、你的情感早就有了大大的进步。”那一刻，积攒许久的委屈瞬间消散,温暖顺着心底蔓延开来。原来严苛的要求背后，从来都是细腻温柔的在意。",
+    "那一天，我忽然读懂了老师的苦心。她的严厉挑剔，从来不是冷漠,而是沉甸甸的期待与责任。她盼着我精益求精，在音乐路上走得又稳又远。每当指尖流淌出流畅动人的乐曲，我总会想起老师严格督促我的模样。我沉下心认真练习，绝不辜负这分严厉里的温柔期许。",
+    "总想说声谢谢你，潘老师。是你的严苛打磨，让我在音乐里不断打磨！更让我明白，世间最真切的关爱，往往藏在苛刻的要求里，藏在不善言说的温柔陪伴里。"
+  ]
+}
+];
+
+// ═══════════ HELPERS ═══════════
+const tc = {师恩:'bg-violet-100 text-violet-700',父母:'bg-rose-100 text-rose-600',朋友:'bg-sky-100 text-sky-600',社区:'bg-emerald-100 text-emerald-700'};
+const td = {师恩:'师恩难忘',父母:'父母情深',朋友:'身边有你',社区:'社区温暖'};
+
+function cardLarge(e, accent){
+  return `<div class="hover-lift bg-white border border-violet-100 cursor-pointer overflow-hidden flex flex-col md:flex-row" onclick="openEssay(${e.id})">
+    <div class="relative w-full md:w-2/5 h-48 md:h-auto flex-shrink-0 overflow-hidden">
+      <img src="${e.img}" alt="${e.title}" class="w-full h-full object-cover object-top" loading="lazy">
+      <div class="absolute top-3 left-3"><span class="px-3 py-1 text-[10px] font-bold rounded-full ${tc[e.tags[0]]}">${td[e.tags[0]]}</span></div>
+    </div>
+    <div class="p-5 md:p-6 flex-1 flex flex-col justify-center">
+      <h3 class="font-serif font-bold text-ink text-lg mb-1">${e.title}</h3>
+      <p class="text-xs text-soft/40 mb-2 font-sans">文 / ${e.author}</p>
+      <p class="text-sm text-soft/60 leading-relaxed mb-3 line-clamp-3">${e.quote}</p>
+      <button class="self-start text-xs font-bold text-violet-600 tracking-wider hover:text-violet-800 transition-colors">阅 读 全 文 →</button>
+    </div></div>`;
+}
+
+function cardSmall(e){
+  return `<div class="hover-lift bg-white border border-violet-50 cursor-pointer overflow-hidden" onclick="openEssay(${e.id})">
+    <div class="relative h-44 overflow-hidden">
+      <img src="${e.img}" alt="${e.title}" class="w-full h-full object-cover" loading="lazy">
+      <div class="absolute top-2 left-2"><span class="px-2 py-0.5 text-[10px] font-bold rounded-full ${tc[e.tags[0]]}">${td[e.tags[0]]}</span></div>
+    </div>
+    <div class="p-4">
+      <h4 class="font-serif font-bold text-ink text-sm mb-1">${e.title}</h4>
+      <p class="text-[10px] text-soft/40 mb-2 font-sans">文 / ${e.author}</p>
+      <p class="text-xs text-soft/50 line-clamp-2 leading-relaxed">${e.quote}</p>
+    </div></div>`;
+}
+
+// ═══════════ TOC ═══════════
+document.getElementById('tocList').innerHTML = E.map(e=>{
+  return `<div class="flex items-center gap-3 py-2.5 border-b border-violet-50 hover:bg-violet-50/30 transition-colors cursor-pointer rounded px-2" onclick="openEssay(${e.id})">
+    <span class="text-xs text-soft/60 font-sans font-medium w-20 flex-shrink-0">${td[e.tags[0]]}</span>
+    <span class="font-serif text-sm text-ink flex-1">${e.title}</span>
+    <span class="text-[11px] text-soft/30 hidden md:inline font-sans">${e.author}</span></div>`;
+}).join('');
+
+// ═══════════ COVER STORY ═══════════
+const cover = E[0];
+document.getElementById('coverStory').innerHTML = `<div class="max-w-5xl mx-auto">
+<div class="mb-8 flex items-center gap-3"><span class="bg-violet-600 text-white text-[10px] font-bold px-3 py-1 tracking-[.2em]">COVER STORY</span>
+<span class="text-xs text-soft/40 tracking-[.1em]">封 面 故 事</span></div>
+<div class="magazine-grid">
+<div class="p-6 md:p-10 border border-violet-100 bg-gradient-to-br from-violet-50/50 to-white flex flex-col justify-center">
+<h2 class="font-serif text-3xl md:text-4xl font-black text-ink mt-4 mb-1">${cover.title}</h2>
+<p class="text-sm text-soft/40 mb-4 font-sans">文 / ${cover.author}</p>
+<div class="flex gap-2 mb-4">${cover.tags.map(t=>'<span class="px-3 py-1 text-xs font-bold rounded '+tc[t]+'">'+td[t]+'</span>').join('')}</div>
+<p class="text-soft/60 text-sm leading-relaxed mb-6">${cover.quote}</p>
+<button class="self-start px-6 py-2.5 bg-violet-700 text-white text-sm font-bold tracking-wider hover:bg-violet-600 transition-colors" onclick="openEssay(1)">阅 读 全 文 →</button>
+</div>
+<div class="cursor-pointer" onclick="openEssay(1)"><img src="${cover.img}" alt="${cover.title}" class="w-full h-full object-cover" loading="lazy"></div></div></div>`;
+
+// ═══════════ SECTIONS ═══════════
+const tea = E.filter(e=>e.tags[0]==='师恩');
+const fam = E.filter(e=>e.tags[0]==='父母');
+const peer = E.filter(e=>e.tags[0]==='朋友');
+const comm = E.filter(e=>e.tags[0]==='社区');
+
+document.getElementById('sectionTea').innerHTML = 
+  '<div class="col-span-full mb-2">'+cardLarge(tea[0],'violet')+'</div>'+
+  '<div class="grid grid-cols-1 md:grid-cols-2 gap-5 col-span-full">'+tea.slice(1).map(e=>cardSmall(e)).join('')+'</div>';
+document.getElementById('sectionFam').innerHTML = 
+  '<div class="col-span-full mb-2">'+cardLarge(fam[0],'violet')+'</div>'+
+  '<div class="grid grid-cols-1 md:grid-cols-2 gap-5 col-span-full">'+fam.slice(1).map(e=>cardSmall(e)).join('')+'</div>';
+document.getElementById('sectionPeer').innerHTML = 
+  '<div class="grid grid-cols-1 md:grid-cols-2 gap-5 col-span-full">'+
+  peer.map(e=>cardSmall(e)).join('')+'</div>';
+document.getElementById('sectionComm').innerHTML = 
+  '<div class="col-span-full">'+cardLarge(comm[0],'violet')+'</div>';
+
+// ═══════════ MODAL ═══════════
+function openEssay(id){
+  const e=E.find(x=>x.id===id);if(!e)return;
+  const bc={师恩:'from-violet-50 to-white',父母:'from-rose-50 to-white',朋友:'from-sky-50 to-white',社区:'from-emerald-50 to-white'};
+  document.getElementById('modalContent').innerHTML=`<div class="relative"><img src="${e.img}" class="w-full max-h-80 object-cover"><button class="absolute top-4 right-4 w-10 h-10 bg-white shadow-lg flex items-center justify-center text-ink/60 hover:bg-violet-500 hover:text-white transition-all text-lg rounded-full" onclick="closeModal()">✕</button></div>
+  <div class="p-6 md:p-10"><div class="flex gap-2 mb-4">${e.tags.map(t=>'<span class="px-3 py-1 text-xs font-bold rounded '+tc[t]+'">'+td[t]+'</span>').join('')}</div>
+  <h3 class="font-serif text-2xl md:text-3xl font-black text-ink mb-2">${e.title}</h3>
+  <p class="text-sm text-soft/40 mb-6 font-sans">文 / ${e.author}</p>
+  <div class="article-body text-[15px] text-soft font-serif">${e.content.map(p=>'<p>'+p+'</p>').join('')}</div>
+  <div class="mt-8 p-5 bg-gradient-to-r ${bc[e.tags[0]]} border-l-4 border-violet-400 flex items-start gap-3">
+  <p class="text-ink/80 italic leading-relaxed">${e.quote}</p></div></div>`;
+  document.getElementById('modal').style.display='flex';document.body.style.overflow='hidden';
+}
+function closeModal(){document.getElementById('modal').style.display='none';document.body.style.overflow='';}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
